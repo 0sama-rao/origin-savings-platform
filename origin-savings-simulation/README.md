@@ -1,6 +1,7 @@
 # Origin Saving Goal Planner
 
-A simple React + Vite project to simulate saving for a financial goal.
+A simple React + Vite project styled with Tailwind CSS to simulate a savings goal plan.  
+Users can enter a target amount and a goal date to calculate how much they need to save monthly.
 
 ## 🛠 Setup Instructions
 
