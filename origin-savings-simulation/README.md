@@ -30,24 +30,7 @@ yarn dev
 npm run build
 
 ### 5. Project Structure
-
-origin-savings-planner/
-├── public/
-│   └── assets/
-├── src/
-│   ├── components/
-│   │   ├── Inputs/
-│   │   │   ├── MoneyInput.jsx
-│   │   │   └── DatePicker.jsx
-│   │   ├── Navbar.jsx
-│   │   ├── Title.jsx
-│   │   ├── GoalHeader.jsx
-│   │   ├── MonthlySummary.jsx
-│   │   └── ConfirmButton.jsx
-│   ├── pages/
-│   │   └── MainPage.jsx
-│   ├── App.jsx
-│   └── index.css
-    └── main.jsx
-├── package.json
-└── README.md
+📁 Folder Structure
+    src/components: UI components (inputs, header, summary, etc.)
+    src/pages: Main entry page
+    public: Static assets
