@@ -1,0 +1,42 @@
+/* src/styles/utilities.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input-label {
+    @apply text-sm text-gray-500 mb-1;
+  }
+
+  .input-field {
+    @apply w-full pl-6 pr-3 py-2 border rounded-md text-lg font-semibold text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500;
+  }
+
+  .card-wrapper {
+    @apply bg-white rounded-lg shadow-lg p-8;
+  }
+
+  .card-container {
+    @apply min-h-screen flex items-start justify-center bg-[#F4F8FA] pt-4;
+  }
+
+  .title-text {
+    @apply mt-8 mb-4 text-base leading-6 text-center max-w-[560px] text-[#1E2A32];
+  }
+
+  .button-main {
+    @apply bg-[#1B31A8] text-white w-[320px] h-[56px] rounded-full mt-6 disabled:opacity-70;
+  }
+
+  .summary-box {
+    @apply w-full max-w-[480px] mt-6 rounded-lg border border-[#E9EEF2];
+  }
+  
+  .summary-top {
+    @apply flex justify-between items-center px-4 pt-6 pb-2;
+  }
+
+  .summary-bottom {
+    @apply text-sm px-4 pb-4 text-gray-500;
+  }
+}

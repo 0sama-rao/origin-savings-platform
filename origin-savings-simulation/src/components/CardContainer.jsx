@@ -1,12 +1,11 @@
 function CardContainer({ children }) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-[#F4F8FA]">
-        <div className="bg-white rounded-lg shadow-lg w-[560px] h-[511px] p-8">
-          {children}
-        </div>
+  return (
+    <div className="card-container px-4">
+      <div className="card-wrapper w-full max-w-[560px]">
+        {children}
       </div>
-    );
-  }
-  
-  export default CardContainer;
-  
+    </div>
+  );
+}
+
+export default CardContainer;
