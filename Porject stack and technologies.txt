@@ -1,7 +1,0 @@
-Stack:
-
-- React + Vite
-- tailwind css
-
-- Testing	
-React Testing Library + Jest	Meets their testing expectations
