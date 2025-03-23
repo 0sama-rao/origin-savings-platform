@@ -1,3 +1,6 @@
+// CardContainer.jsx
+// This component having a card which wraps other components inside a centered, responsive styled container.
+
 function CardContainer({ children }) {
   return (
     <div className="card-container px-4">
@@ -7,5 +10,4 @@ function CardContainer({ children }) {
     </div>
   );
 }
-
 export default CardContainer;

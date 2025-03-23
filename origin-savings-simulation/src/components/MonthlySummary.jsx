@@ -1,19 +1,23 @@
+// MonthlySummary.jsx
+// This component calculates and displays the monthly savings needed to reach a goal.
+
 import dayjs from 'dayjs';
 
 function MonthlySummary({ amount, reachDate }) {
   const currentDate = dayjs();
   const goalDate = dayjs(reachDate);
-  let months = goalDate.diff(currentDate, 'month') + 1;
 
-  // Ensure at least 1 month
-  months = months < 1 ? 1 : months;
+  // Including current month
+  let months = goalDate.diff(currentDate, 'month') + 1;
+  
+  // Minimum of 1 month
+  months = months < 1 ? 1 : months; 
 
   const monthlyAmount = amount > 0 ? amount / months : 0;
 
-  // Function to format large numbers with exponential notation if needed
   const formatAmount = (num) => {
     return num > 1e9
-      ? num.toExponential(2) // e.g., "1.23e+10"
+      ? num.toExponential(2)
       : num.toLocaleString(undefined, { minimumFractionDigits: 2 });
   };
 
@@ -32,5 +36,4 @@ function MonthlySummary({ amount, reachDate }) {
     </div>
   );
 }
-
 export default MonthlySummary;

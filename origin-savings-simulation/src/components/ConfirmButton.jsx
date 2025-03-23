@@ -1,3 +1,6 @@
+// ConfirmButton.jsx
+// This component renders a confirm button with loading and disabled states.
+
 function ConfirmButton({ onClick, loading, disabled }) {
   return (
     <div className="flex justify-center">
@@ -11,5 +14,4 @@ function ConfirmButton({ onClick, loading, disabled }) {
     </div>
   );
 }
-
 export default ConfirmButton;

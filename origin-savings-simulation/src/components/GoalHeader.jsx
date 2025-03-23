@@ -1,3 +1,6 @@
+// GoalHeader.jsx
+// Displays an SVG image as a header for the goal section.
+
 import goalBlock from '../assets/buy-a-house.svg';
 
 function GoalHeader() {
@@ -9,6 +12,4 @@ function GoalHeader() {
     />
   );
 }
-
-
 export default GoalHeader;
