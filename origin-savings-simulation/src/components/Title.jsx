@@ -1,4 +1,6 @@
-// src/components/Title.jsx
+// Title.jsx
+// Renders the title SVG image with styling.
+
 import titleSvg from '../assets/Title.svg';
 
 function Title() {
@@ -12,5 +14,4 @@ function Title() {
     </div>
   );
 }
-
 export default Title;

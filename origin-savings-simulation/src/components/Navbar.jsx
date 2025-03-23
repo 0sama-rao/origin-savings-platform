@@ -1,4 +1,6 @@
-// components/Navbar.jsx
+// Navbar.jsx
+// Displays a top navigation bar with the Origin logo.
+
 import originLogo from '../../public/logoOrigin.svg';
 
 function Navbar() {
@@ -8,5 +10,4 @@ function Navbar() {
     </nav>
   );
 }
-
 export default Navbar;

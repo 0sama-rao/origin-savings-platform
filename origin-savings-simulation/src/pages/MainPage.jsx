@@ -1,4 +1,6 @@
-// src/pages/Main.jsx
+// Main.jsx
+// Main page where all components are assembled and savings plan logic is handled.
+
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import CardContainer from '../components/CardContainer';
@@ -20,7 +22,7 @@ function Main() {
     setTimeout(() => {
       setConfirmedData({ amount, reachDate });
       setLoading(false);
-    }, 800); 
+    }, 400); // Adding some delay so request looks realistic
   };
 
   return (
@@ -37,11 +39,9 @@ function Main() {
           amount={confirmedData?.amount ?? 0}
           reachDate={confirmedData?.reachDate ?? new Date()}
         />
-        <ConfirmButton onClick={handleConfirm} loading={loading} disabled= {amount<=0} />
+        <ConfirmButton onClick={handleConfirm} loading={loading} disabled={amount <= 0} />
       </CardContainer>
     </>
   );
 }
-
-
 export default Main;

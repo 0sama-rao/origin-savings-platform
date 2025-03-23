@@ -1,4 +1,9 @@
-/* src/styles/utilities.css */
+
+/*
+  This file contains reusable Tailwind utility classes using the @apply directive.
+  These classes help reduce redundancy and ensure consistent styling.
+*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -31,7 +36,7 @@
   .summary-box {
     @apply w-full max-w-[480px] mt-6 rounded-lg border border-[#E9EEF2];
   }
-  
+
   .summary-top {
     @apply flex justify-between items-center px-4 pt-6 pb-2;
   }
