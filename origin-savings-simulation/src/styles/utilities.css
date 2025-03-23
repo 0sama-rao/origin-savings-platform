@@ -18,7 +18,7 @@
   }
 
   .card-wrapper {
-    @apply bg-white rounded-lg shadow-lg p-8;
+    @apply bg-white rounded-lg shadow-lg pt-8 pr-8 pb-8 pl-10;
   }
 
   .card-container {

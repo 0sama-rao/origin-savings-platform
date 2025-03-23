@@ -1,0 +1,104 @@
+🧪 React Testing Setup (Vite + Jest) & Example: MoneyInput
+✅ Summary: Why we did all this
+
+Since we're using Vite + React, and we chose Jest as the test runner (per Origin's project requirement), we had to set up Jest manually to work with:
+
+    JSX and modern JavaScript
+    CSS/image imports
+    React Testing Library for simulating user interactions
+
+✅ Files Created in Setup
+babel.config.cjs
+
+    Enables Jest to understand JSX and ES6+ syntax
+    Uses:
+
+    module.exports = {
+      presets: ['@babel/preset-env', '@babel/preset-react'],
+    };
+
+jest.config.cjs
+
+    Main config for Jest to:
+        Use jsdom (simulate browser)
+        Apply Babel transform to .js/.jsx
+        Mock CSS and images
+        Load setup file
+
+    module.exports = {
+      testEnvironment: 'jsdom',
+      moduleFileExtensions: ['js', 'jsx'],
+      transform: {
+        '^.+\\.jsx?$': 'babel-jest',
+      },
+      moduleNameMapper: {
+        '\\.(css|less|scss|sass)$': '<rootDir>/styleMock.js',
+        '\\.(jpg|jpeg|png|svg)$': '<rootDir>/fileMock.js',
+      },
+      setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+    };
+
+styleMock.js
+
+module.exports = {};
+
+    Mocks any .css or .scss files during Jest test runs (since Jest can't handle real styles).
+
+fileMock.js
+
+module.exports = 'test-file-stub';
+
+    Mocks static assets like .svg, .png, etc.
+
+jest.setup.js
+
+import '@testing-library/jest-dom';
+
+    Enables custom matchers like .toBeInTheDocument(), .toHaveTextContent() etc.
+
+✅ package.json update
+
+"scripts": {
+  "test": "jest"
+}
+
+🧪 Component Tested: MoneyInput
+🔹 Test 1: "formats number correctly when typed"
+What it does:
+
+    Simulates user typing 3500.45
+    Your component uses limitToDigits() to remove decimals → becomes 350045
+    It’s then formatted using toLocaleString() to show 350,045
+
+const handleChange = jest.fn();
+render(<MoneyInput amount={0} onAmountChange={handleChange} />);
+const input = screen.getByRole('textbox');
+fireEvent.change(input, { target: { value: '3500.45' } });
+
+expect(input.value).toBe('350,045');
+expect(handleChange).toHaveBeenCalledWith(350045);
+
+🔹 Test 2: "ignores non-numeric characters"
+What it does:
+
+    Simulates input: $12a34b
+    Only digits are kept → 1234
+    Formatted as: 1,234
+
+fireEvent.change(input, { target: { value: '$12a34b' } });
+
+expect(input.value).toBe('1,234');
+expect(handleChange).toHaveBeenCalledWith(1234);
+
+✅ Why We Use React Testing Library
+
+    It helps test components from the user’s perspective
+    Works well with Jest
+    Lets us simulate typing, clicking, keyboard events, etc.
+
+✅ Final Thoughts
+
+    This setup allows us to run reliable frontend tests in a Vite + React project using Jest
+    It’s modular and works across components with similar patterns
+    You only need to do this config once; afterward, writing tests is fast
+
