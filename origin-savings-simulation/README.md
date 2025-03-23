@@ -8,7 +8,7 @@ Users can enter a target amount and a goal date to calculate how much they need 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/origin-savings-planner.git
+https://github.com/0sama-rao/origin-savings-platform.git
 cd origin-savings-planner
 ```
 
