@@ -1,0 +1,49 @@
+ DatePicker.test.jsx — Test Summary & Purpose
+🔧 Goal:
+
+To test the behavior of the custom <DatePicker /> component based on the requirements:
+
+    It shows the correct date
+    Allows only future dates
+    Responds to clicks and keyboard arrows
+
+✅ Test Breakdown:
+1. "renders the initial month and year"
+
+    Purpose: Make sure the component displays the reachDate passed in props.
+    We use dayjs() to get today’s month/year.
+    expect(screen.getByText(...)) checks that the formatted date is rendered.
+
+2. "increments month on right arrow button click"
+
+    Simulates a user clicking the > button.
+    Expects the component to update to the next month.
+    Also checks that the onDateChange callback was triggered.
+
+3. "does not decrement before current month"
+
+    Simulates a user clicking the < button while already on the current month.
+    Makes sure:
+        The component does not go into the past
+        onDateChange is not called
+
+4. "responds to keyboard arrow keys"
+
+    Focuses on the date picker div (with tabIndex=0)
+    Simulates an ArrowRight key press.
+    Verifies:
+        Month increases
+        onDateChange is called (just like a click)
+
+🧠 Technologies used:
+
+    @testing-library/react: For rendering and interacting with the DOM
+    jest.fn(): For spying on callback props like onDateChange
+    dayjs: Used to match actual formatting logic used in the component
+
+🧪 What We’re Covering:
+Feature	Tested? ✅
+Initial month/year display	✅
+Right arrow click logic	✅
+Left arrow block logic	✅
+Keyboard arrow interaction	✅

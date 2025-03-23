@@ -1,17 +1,17 @@
 // Title.jsx
 // Renders the title SVG image with styling.
 
-import titleSvg from '../assets/Title.svg';
+// import titleSvg from '../assets/Title.svg';
 
 function Title() {
   return (
-    <div className="bg-[#F4F8FA] w-full flex justify-center">
-      <img
-        src={titleSvg}
-        alt="Let's plan your saving goal"
-        className="mt-12 mb-6 w-[560px] max-w-full px-4"
-      />
+    <div className="w-full flex justify-center bg-[#F4F8FA]">
+      <h1 className="text-center mt-[80px] mb-6 text-base font-medium text-[#1B31A8] max-w-[560px] px-4">
+        Let’s plan your <span className="font-semibold text-[#1B31A8]">saving goal.</span>
+      </h1>
     </div>
   );
 }
+
+
 export default Title;
